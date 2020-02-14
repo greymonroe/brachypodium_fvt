@@ -1,0 +1,347 @@
+---
+title             : "Trait plasticity and covariance along a continuous soil moisture gradient"
+shorttitle        : "Function-valued drought extremes"
+
+author: 
+  - name          : "J. Grey Monroe"
+    affiliation   : "1"
+    corresponding : yes    # Define only one corresponding author
+    address       : "262 Robbins Hall, UC Davis, One Shields Ave, Davis CA 95616"
+    email         : "greymonroe@gmail.com"
+  - name          : "Haoran Cai"
+    affiliation   : "2"
+  - name          : "David L. Des Marais"
+    affiliation   : "2,3"
+affiliation:
+  - id            : "1"
+    institution   : "Department of Plant Sciences, University of California at Davis, Davis, USA"
+  - id            : "2"
+    institution   : "Department of Civil and Environmental Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA"
+  - id            : "3"
+    institution   : "The Arnold Arboretum of Harvard University. Boston, MA, USA"
+
+abstract: Water is perhaps the greatest environmental determinant of plant yield and fitness, yet our understanding of plant-water relations is limited because it is primarily informed by  experiments that have treated soil moisture variability  as two simple discrete levels - wet and dry - rather than a continually varying environmental gradient. Here we used experimental and statistical methods based on function-valued traits to study responses to continuously varying soil moisture gradient in a suite of physiological and morphological traits in two species and multiple genotypes of the model grass \textit{Brachypodium}. We find that the majority of traits exhibit non-linear responses to soil moisture variability. We also observe differences in the shape of these non-linear responses between traits, species, and genotypes. Emergent phenomena arise from this variation including changes in trait correlations and evolutionary constraints as a function of soil moisture. These results point to the importance of considering non-linearity in plant-water relations to predict outcomes of adaptation to changing climates.
+  
+keywords          : "drought, function-valued traits, Brachypodium, evolutionary constraint, phenotypic plasticity, non-linearity"
+wordcount         : 
+
+bibliography      : ["r-references.bib"]
+csl               : mycsl.csl
+
+floatsintext      : no
+figurelist        : no
+tablelist         : no
+footnotelist      : no
+linenumbers       : no
+mask              : no
+draft             : no
+figsintext        : yes
+
+documentclass     : "apa6"
+classoption       : "jou"
+output            : papaja::apa6_pdf
+
+header-includes   : 
+  \newcommand{\beginsupplement}{\setcounter{table}{0}  \renewcommand{\thetable}{S\arabic{table}} \setcounter{figure}{0} \renewcommand{\thefigure}{S\arabic{figure}}}
+---
+
+```{r setup, include = T, warning=FALSE}
+library("papaja")
+library("ggplot2")
+library("cowplot")
+library("tidyverse")
+```
+
+```{r, message=F, results="hide", warning=FALSE}
+#source("../src/plot_fvtcov.R")
+source("../src/prepare_data.R")
+
+source("../src/plot_fvt_byspecies.R")
+source("../src/calc_fvt_byspecies.R")
+source("../src/corplots_byspecies.R")
+source("../src/constraints_byspecies.R")
+
+# source("../src/plot_fvt.R")
+# source("../src/calc_fvt.R")
+# source("../src/prinsimp.R")
+# source("../src/constraints.R")
+source("../src/drydown.R")
+source("../src/maps.R")
+
+```
+
+# Introduction
+
+For plants, soil water availability is one of the most important environmental factors in ecology and agriculture, acting as a major determinant of fitness and yield [@juenger2013natural; @greenham2017temporal]. Considerable interest and effort have been placed on studying plant responses to drought, often defined conceptually and experimentally as an environmental condition of abnormally elevated aridity resulting in decreased plant performance [@passioura1996drought]. Most of the vast research on drought responses and tolerance strategies, including in _Brachypodium_, the focal system of this work, has been limited to comparisons between discrete soil water levels - control and water-limited [@des2012physiological; @edwards2012quantitative; @el2014genotype; @greenham2017temporal; @vasseur2014multivariate]. Yet soil moisture as an environmental factor is complex and multidimensional, with fluctuations varying continuously in timing, duration, and degree. Here we investigate trait responses to one important dimension of soil moisture variability - degree - with experimental and statistical approaches treating soil moisture content as a continuous variable rather than a set of fixed levels.
+
+The limited extent to which continuous environmental variables have been studied is not unique to investigations of plant responses to soil moisture. Recent decades have seen increased appreciation for modeling traits as mathematical functions of continuous variables across diverse organisms [@rocha2012connecting; @pettay2008age; @mason2020learning], a wide range of traits [@robinson2009impact; @stinchcombe2010across; @mcguigan2010quantitative], and numerous components of the environment [@brommer2008exploring; @mcguigan2009condition; @pearse2019life]. This burgeoning interest in the importance of "function-valued traits" has evolved from a call-to-arms to a field experiencing rapid theoretical and empirical advances [@kirkpatrick1989quantitative; @kingsolver2001variation; @griswold2008hypothesis; @stinchcombe2012genetics; @goolsby2015phylogenetic; @gomulkiewicz2018variation]. For plant biologists this presents a compelling framework for gaining a deeper understanding of plant adaptations to the environment.
+
+A deep body of literature aims to understand the traits and strategies used by plants to acclimate to variable soil water content. Quantitative genetic variation in myriad drought resistance traits have been observed in natural populations and laboratory model systems. In particular, natural populations of Brassicaceae species (including _Arabidopsis thaliana_) and _Brachypodium_ harbor variation both constitutive and inducible traits mediating plant-water relations, including water use efficiency [@des2012physiological; @edwards2012quantitative; @greenham2017temporal; @des2017interactive], production of compatible osmolytes [@des2017interactive; @kesari2012intron], leaf anatomy [@skirycz2011pause; @verelst2013molecular;@dittberner2018natural], root-shoot biomass partitioning [@des2012physiological; @des2017interactive], and many others [@verslues2011drought; @edwards2012quantitative; @juenger2013natural; @yarkhunova2016selection; @luo2016specific; @lenk2019transcriptional]. Among the numerous plant traits that can and have been measured, few have been studied more extensively than specific leaf area (SLA - often reported as it's inverse, leaf mass per area or LMA). SLA provides a description of leaf architecture that is central to the leaf economics spectrum, a theory which seeks to explain variation in leaf physiological strategies, from more conservative (low SLA) to more productive (high SLA) [@wright2004worldwide]. In the context of drought stress, it is intuitive that low SLA might be adaptive as lower leaf surface area is expected to reduce water loss through transpiration. In several cases, reductions in SLA have been reported under drought conditions [@casper2001drought].
+
+Despite abundant evidence of natural variation in organism-environment interaction, little is known as to how trait covariance changes across continuous environmental gradients [but see @robinson2009impact]. Describing this structure is important as trait variances and covariances can result in differential evolutionary constraints in alternative environments. For example, if total genetic variance in trait space changes depending on the environment, then the capacity to respond to selection will vary accordingly, with reduced responses to selection under conditions where trait variation is lower and vice versa. Similarly, if trait covariances depend on environment, conditions which increase trait covariances may limit evolutionary potential across a range of environments by reducing the effective axes of variation [@gomulkiewicz2018variation; @kingsolver2003environmental; @levins1968evolution; @via1985genotype]. These phenomena are made  more complex by the possibility that the relationship between trait variances and covariances with the environment may be non-linear. Investigating complexities of genetic architecture is therefore needed for developing more complete quantitative predictions of evolvability in rapidly changing environments. Fortunately, advances have been made in statistical methods to reduce the dimensionality of genetic variance covariance matrices and produce meaningful summaries describing evolutionary constraints [@houle1992comparing; @blows2007tale; @kirkpatrick2009patterns; @kingsolver2015genetic].
+
+In this study we combined these approaches with function-valued trait analyses to investigate trait plasticity, covariance and evolutionary constraints across soil moisture gradients. We model trait responses to a continuous gradient of soil moisture for a range of genotypes of two species of the model grass genus _Brachypodium_. Because the shapes of trait responses cannot necessarily be known _a priori_, we use model selection among linear and non-linear environmental predictors to estimate the response function for each trait. We then estimate genotype means at different levels of soil moisture and compute the variance-covariance parameters for all traits. Finally, we ask whether patterns of variance and covariance in drying-responsive traits in _Brachypodium_ species may lead to variation in evolutionary constraint as a function of soil moisture.
+
+# Materials and Methods
+
+### Genotypes and species  
+
+_Brachypodium_ is a model genus for the genetics and genomics of C3 grasses [@brkljacic2011brachypodium]. In this work we studied natural variation between and among two species of _Brachypodium_: the annual _B. distachyon_ and the perennial _B. sylvaticum_. Both species are endemic to Eurasia, with _B.distachyon_ more prevalent in seasonally dry habitats in Southern Europe, North Africa, and the Middle East, and _B. sylvaticum_ more widely distributed throughout Eurasia [@catalan2016phylogeny] (Figure \@ref(fig:maps)).
+
+Five genotypes of each species were studied to characterize patterns of variation in plant traits across an environmental gradient: _Brachypodium distachyon_ inbred lines ABR2, Adi-10, Bd21, Bd3-1, and Koz-1 and _Brachypodium sylvaticum_ inbred lines Ain-1, Ast-1, Kry-1, Osl-1, Vel-1. For each species, these genotypes represent a range of geographical origins and phenotypic diversity [@steinwand2013sylvaticum; @des2017interactive]. Both species are self-compatible and each of the lines used here have been maintained as inbred lines for greater than six generations [@steinwand2013sylvaticum; @vogel2009development]; as such, experimental replicates may be considered nearly homozygous.
+
+### Plant growth and dry down experiment
+
+(ref:drydown) **Effect of the experimental dry down on soil water content.** (A) Time series of gravimetric soil moisture for all pots during the 14-day dry down period. (B) Distribution of final (day 14) soil moisture content across all pots. The data are distinguished by color according to the watering treatment. (C) Final soil moisture content by genotype.
+
+```{r drydown, fig.cap='(ref:drydown)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"}
+knitr::include_graphics("../Figures/DryDown_lines.pdf", dpi = 108)
+```
+
+Plant growth and experimental soil dry down were performed in the greenhouses of the Arnold Arboretum of Harvard University. To synchronize germination across genotypes within each species, seeds were placed on damp filter paper in the dark at 4°C for 14 days prior to planting. To synchronize the developmental stage at the timing of the drought treatments between the two species, _B. sylvaticum_ seeds were planted thirteen days before _B. distachyon_ (Oct 7 and 20, 2015, respectively). For each genotype, 1200 seeds were planted two to a pot and were subsequently thinned to one plant, for a total of 600 experimental plants in a randomized block design. All plants germinated within four days of sowing. Individual seeds of plants were sown in Greens Grade Profile porous ceramic rooting media (Profile Products, Buffalo Grove, IL, USA) in Deepot D40H Conetainers (650mL; Stuewe & Sons. Tangent, OR, USA) and grown at 25°C/20°C days/nights. Ambient sunlight was supplemented to 1000 umol/m2/s for 12hr/day.
+
+Dry down treatments began 29 and 42 days after sowing (DAS) for _B. distachyon_ and _B. sylvaticum_, respectively. Because the harvesting was divided over five consecutive days (see section below), plants were split into five equal harvest cohorts, with each cohort containing equal numbers of each watering treatment to avoid confounding harvest day with soil moisture content. Thus, though each consecutive cohort differed in age by a single day, each experienced the dry down treatment for the same amount of time. Nevertheless, we expected the difference in age between harvest cohorts to potentially impact trait expression and we therefore included harvest day (cohort) as a covariate in subsequent models. To generate a continuous gradient of final soil moisture by the end of the dry down period, plants were split into five watering treatments, receiving approximately 0, 4, 8, 12, 16, or 20 ml of water per day for 14 days. Prior to initiating the experiment pots were weighed with dry soil ($mass_{dry}$) and field capacity ($mass_{max}$) at the beginning of the experiment. These measurements provide the basis for calculating the gravimetric soil moisture content on each day and at the conclusion of the experiment. During the course of the dry down experiment, soil moisture content was calculated during the morning of day $d$ for each pot as $mass_d/(mass_{max}-mass_{dry})$.
+
+### Plant harvesting and phenotyping
+
+To characterize phenotypic responses to our simulated drought, we measured a suite of developmental and physiological traits. Plants were harvested in five cohorts over five days. Each day, half of the sampled plants were harvested for above and below ground biomass, total above ground green area, $\delta C_{13}$, N content, C content. The other half were harvested and assessed for specific leaf area (SLA) and relative water content (RWC). Above ground biomass was measured after drying leaf material overnight at 60°C. Below ground biomass was measured after washing the soil matrix from roots and drying them overnight at 60°C. Above ground leaf area was estimated by laying plants flat between plates of clear plexiglass and imaging with a Nikon 5300 digital camera at a fixed distance with a 35mm Nikkor lens. Total green pixels were counted for each image with Easy Leaf Area with settings shown in Figure \@ref(fig:leafarea). SLA was calculated by scanning the two youngest fully emerged leaves. Leaf area was calculated from these same images using Easy Leaf Area. Above and belowground biomass was measured after leaves were dried and SLA was calculated as $leaf\ area / biomass_{dry}$. Leaf tissues for $\delta C_{13}$, $\delta N_{15}$, nitrogen (hereafter "N") content, and carbon (hereafter "C") content were ground to a fine powder and processed by the UC Davis Stable Isotope Facility. These leaves were also used to calculate RWC. Prior to drying, fresh leaves were weighed ($biomass_{fresh}$) and then submerged under water in 15mL falcon tubes for several hours. They were then weighed ($biomass_{turgid})$, oven-dried overnight, and weighed again ($biomass_{dry}$). RWC was calculated as $(biomass_{fresh}-biomass_{dry})/(biomass_{turgid}-biomass_{dry})$}.
+
+```{r models, results = 'asis', echo = F}
+
+pretty_table <- capture.output(apa_table(
+  t_model_selection_summaries_byspecies
+  , caption = "Model selection. *** = predictor variable p < 1e-5, ** = predictor variable p < 1e-3, * = predictor variable p < 0.5, - = predictor variable included in selected model but p > 0.05. H = harvest day, S = species, G = genotype, E = final soil moisture, E^2 = quadratic parameter, ns(E) = 2nd degree natural spline parameter",
+  digits=3,
+  font_size="scriptsize",
+  longtable = F,
+  landscape=F,
+  align="c",
+  midrules=1:nrow(t_model_selection_summaries_byspecies)
+))
+
+pretty_table <- gsub("\\{table\\}", "\\{table\\*\\}", pretty_table)
+cat(paste(pretty_table, collapse = "\n"))
+
+
+```
+
+## Analyses
+We used R for all statistical analyses. Code and data to generate this manuscript can be found at https://github.com/greymonroe/brachypodium_fvt.
+
+### Function-valued traits
+For the purposes of modeling phenotypic responses to variation in soil moisture content, we considered soil moisture content as the final soil moisture on day 14 of the dry down period for each plant, referred to in figures as $Soil\  moisture (\%_{final})$. A major challenge in studying function-valued traits is model selection. That is, identifying the functions that best describe the curvature (or lack thereof) in the shape of phenotypic responses to environmental gradients. Quadratic and natural splines have been suggested as potential functions to model non-linearities [@meyer2005randomregression], but selecting the appropriate function is challenging. Akaike information criterion (AIC) selection based on contrasting multiple complex models offers an effective means to balance predictability with over-fitting [@griswold2008hypothesis; @gomulkiewicz2018variation]. Thus, we began with the complex model for traits as described below.
+
+$Trait = H+G+E+E^2+ns(E)_{df=2}+G*E+G*E^2+G*ns(E)_{df=2}$
+
+where $H = harvest\ day, \ G = genotype,\ E = soil\ moisture,\ E^2 = quadratic\ parameter,\ ns(E)_{df=2} = second\ degree\ natural\ spline\ parameter$
+
+We then selected a model for each trait using stepwise AIC model selection with the $stepAIC$ function from the package $MASS$ [@MASS] in R with the "direction" parameter set to "both." The two species were analyzed separately to avoid biases introduced by enforcing the same model on species with different sizes, developmental trajectories and evolutionary histories.
+
+###  Genetic correlations as a function of soil moisture content
+We calculated trait correlations at different levels of soil moisture to characterize how genetic correlations between traits vary as a function of soil moisture content. Predicted genotypic means for each trait were calculated at 20 levels of soil moisture content (from 0.3 to 1.0 gravimetric water content) based on the model chosen by AIC (see above). Next at each level of soil moisture, pairwise Pearson correlation coefficients between genotype means were calculated within each species.  
+
+### Plasticity through multidimensional trait space
+We quantified total plasticity through multidimensional trait space as a function of soil moisture by scaling each trait to a mean of 0 and calculating distance matrix between genotype means at all soil moisture levels. We looked specifically at total plasticity between consecutive soil moisture levels for each genotype. At each level of soil moisture, we then compared the two species by T-tests.  To visualize plasticity of each genotype through multivariate trait space further, we performed a principal component analysis from the matrix of scaled genotype trait means using the _prcomp_ function in R.
+
+### Analysis of evolutionary constraints among traits
+
+We calculated several statistics summarizing evolutionary constraint as described in @kirkpatrick2009patterns. First, for each species, we estimated the $G$ matrix of genetic covariances between genotype trait means at different levels of soil moisture. We then calculated, using the _prcomp_ function in R, the eigenvalues of each mean standardized (trait values divided by mean) $G$ matrix, $\lambda_i$. From these we then calculated the _number of effective dimensions_, $n_{D}$, equal to the sum of the eigenvalues divided by the largest eigenvalue:
+
+$$n_{D} = \sum_{n=1}^{n} \lambda_i/\lambda_l$$
+
+We also calculated the _maximum evolvability_, $e_{max}$, equal to the square root of the largest eigenvalue, $\lambda_l$ [@kirkpatrick2009patterns; @houle1992comparing]: 
+
+$$e_{max} = \sqrt{\lambda_l}$$
+
+Finally, we calculated the _total genetic variance_ [@kirkpatrick2009patterns], equal to the sum of the eigenvalues of $G$:
+
+$$v_T = \sum_{n=1}^{n} \lambda_i$$
+
+# Results
+
+### The dry down experiment resulted in a continuous soil moisture gradient
+
+Across the six watering treatments, combined with random variation in water capacity of pots (Figure \@ref(fig:pots)), the dry down period resulted in a continuous environmental gradient of final soil moisture, but with a higher frequency of plants near the driest extreme of soil moisture variation (Figure \@ref(fig:drydown)). This gradient provides the basis for analyzing phenotypes in relation to soil moisture treated as a continuous gradient rather than limited set of discrete factors.
+
+The observed reduction in leaf relative water content under the driest conditions in both _B. distachyon_ and _B. sylvaticum_ indicates that at this extreme, plants were physiologically stressed  (Figure \@ref(fig:curves)A). Mean leaf RWC for plants in the 10% tail of soil water content was `r tailrwc`% which is drier than that observed in the dry treatment of Des Marais et al. [@des2017interactive]. Additional observations made during the experiment such as leaf rolling, another symptom of dehydration stress, was evident in plants at the lowest water treatment by the end of the dry down period.
+
+### Non-linearity in trait responses to soil moisture is pervasive  
+
+We evaluated the degree to which traits show linear or non-linear shapes using an AIC model selection approach from a full model which included quadratic and natural spline parameters relating soil moisture content to plant phenotypes. We observed significant ($\alpha < 0.05$) non-linear components (quadratic, spline, or both) in the final models for all of the traits which included an environmental (water content) predictor (Table \@ref(tab:models), Figure \@ref(fig:curves)) except N content in _B. distachyon_, C content in _B. sylvaticum_, and shoot mass in _B. sylvaticum_ where non-linear environmental predictors were included in the final models chosen by AIC but did not significantly explain trait variance (p > 0.05). In _B. distachyon_, all of the traits included at least one non-linear environmental predictor. In contrast, SLA, total biomass and shoot mass were not predicted by environment in _B. sylvaticum_. Interestingly, of all the traits which were predicted by environment in both _B. distachyon_ and _B. sylvaticum_, the shape -- whether a quadratic versus a spline function was included in the model -- was different in both species with the exception of carbon to nitrogen ratio. 
+
+When considering plasticity across multidimensional trait space (Figure \@ref(fig:pca)), it appears that most of the variation is attributable to responses to low soil moisture _B. distachyon_ which was significantly more responsive to low soil moisture values (Figure \@ref(fig:pca)A). In contrast, _B. sylvaticum_ was more responsive to extreme wet conditions than  _B. distachyon_. Across PC2 and PC3, we observed, particularly in _B. sylvaticum_, that phenotypes were similar between extreme dry and extreme wet soil moisture contents. This similarity may be explained by the quadratic parameters of trait functions where the curvature of trait responses leads to similar phenotypes at both environmental extremes.
+
+(ref:curves) **Variation in phenotypic responses to soil moisture gradient as function-valued traits.** _B. sylvaticum_ genotypes are colored orange and _B. distachyon_ blue. (a) `r real_trait_names[1]` (b) `r real_trait_names[2]` (c) `r real_trait_names[3]` (d) `r real_trait_names[4]` (e) `r real_trait_names[5]` (f) `r real_trait_names[6]` (g) `r real_trait_names[7]` (h) `r real_trait_names[8]` (i) `r real_trait_names[9]` (j) `r real_trait_names[10]` (k) `r real_trait_names[11]` (l) `r real_trait_names[12]`
+
+```{r curves, fig.cap='(ref:curves)', out.width = "\\textwidth", fig.pos = "!h"}
+knitr::include_graphics("../Figures/curves_byspecies.pdf", dpi = 108)
+```
+
+(ref:pca) **Plasticity through multivariate trait space.** (A) Plasticity across all traits was calculated as distance between scaled phenotype for each genotype between different levels of soil moisture. Box plots indicate species median and 25th and 75th percentiles with whiskers extending to 1.5 times the interquartile range. "*" indicates significant differences between species (t-test, $\alpha < 0.05$). Principal component analysis of scaled phenotypic responses to soil moisture gradient among genotypes of both species. Upper panels show genotype means across soil mositure content. Percent values in axis titles indicate percent variance explained by that principal component. Lower panels show eigenvectors of each trait. (B) PC1 and PC2. (C) PC3 and PC4. 
+
+```{r pca, fig.cap='(ref:pca)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"}
+knitr::include_graphics("../Figures/pca_byspecies.pdf", dpi = 108)
+```
+
+### Nearly all traits show significant genetic variation
+
+We also tested whether there was significant natural variation for the traits measured between genotypes in each species by looking at the parameters in the final model for each trait. Interestingly, in both species and for all traits except relative water content in _B. sylvaticum_ the final model included a significant genotype term, indicating significant differences between genotypes in magnitude of traits across all levels of soil moisture (Table \@ref(tab:models), Figure \@ref(fig:curves)). For other traits there are clear distinctions between the two species. For example, $\delta C_{13}$ was considerably higher in _B. sylvaticum_ (Figure \@ref(fig:curves)). For SLA, while _B. distachyon_ showed a strong response to soil moisture, especially under the driest conditions, SLA in _B. sylvaticum_ was not responsive to soil moisture. In contrast, _B. sylvaticum_ appears to show a more dramatic response in leaf composition estimated by N content and C:N ratio.
+
+### Several traits show interactions between genotype and non-linear responses to the environment
+
+Significant interactions between genotype and environmental parameters in a final model indicate the presence of genetic variation for plasticity (GxE) [@via1985genotype]. For those GxE interactions where the environmental parameter is non-linear, significant GxE indicates genetic variation for the shape of reaction norms. SLA showed a significant interaction between genotype and soil moisture in _B. distachyon_. In _B. sylvaticum_, nitrogen content, carbon to nitrogen ratio, above ground green area, and root to shoot ratio all showed significant interactions between genotype and soil moisture (Table \@ref(tab:models), Figure \@ref(fig:curves)). In each of these cases, the interaction between genotype and environment involved a non-linear environmental predictor, indicating not only variation for the magnitude of plasticity (i.e. slope) but also variation in the shape of responses. 
+
+(ref:cors) **Trait correlations as a function of  soil moisture content.** Correlations were calculated among genotypes by species (blue = _B. distachyon_, orange = _B. sylvaticum_). Note that correlations are not shown for traits in species where genotype was not included in final model (Table 1).
+```{r cors, fig.cap='(ref:cors)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"}
+knitr::include_graphics("../Figures/corsplots_byspecies.pdf", dpi = 108)
+```
+
+(ref:constraints) **Contrasting patterns of evolutionary constraint between _B. distachyon_ and _B. sylvaticum_.** Summary statistics of evolutionary constraint as a function of soil moisture in _B. distachyon_ (blue) and _B. sylvaticum_ (orange). (a and b) The number of effective dimensions, $n_D$, estimates number of unconstrained axes of variation (c and d) The maximum evolvability, $e_{max}$, corresponds to the square root of the largest eigenvalue of the genetic covariance matrix. (e and f) The total genetic variance, $v_T$, is equal to the sum of the eigenvalues of the genetic covariance matrix.
+```{r constraints, fig.cap='(ref:constraints)', out.width = "\\textwidth", fig.pos = "!h"}
+knitr::include_graphics("../Figures/constraints_byspecies.pdf", dpi = 108)
+```
+
+### Correlations between traits change as a function of soil moisture, often in a non-linear fashion  
+
+We examined correlations between genotype trait means across soil moisture for traits where genotypic differences were observed (i.e. genotype predictor in trait models). Certain traits were strongly correlated regardless of environment. For example, correlations near 1 were observed between biomass and green area in both species across soil moisture. More complex relationships between trait correlations and soil moisture are observed in other trait combinations.  For traits with genotype by non-linear environment interactions (Table \@ref(tab:models)), trait correlations showed non-linear relationships with soil moisture as well. Because more of these interactions were found in _B. sylvaticum_ the number of trait combinations showing non-linear relations between correlations and soil moisture appears to be higher than in _B. distachyon_ (Figure \@ref(fig:cors)). In some cases, the relationship between soil moisture and trait correlation was dramatic. The correlation between C:N ratio and root:shoot ratio in _B. sylvaticum_, for example, varied from  approximately 0.3 under the wettest environment to approximately -0.7 under the driest environment.
+
+### Evolutionary constraints differ as a function of soil moisture and show contrasting patterns between _Brachypodium_ species
+
+To assess evidence of evolutionary constraint on the sampled traits, we estimated and analyzed parameters of the genetic covariance matrix, $G$, in each species across the soil moisture gradient. These analyses revealed contrasting patterns of evolutionary constraint both in relation to soil moisture and between _B. distachyon_ and _B. sylvaticum_. In _B. distachyon_, the number of effective dimensions ($n_D$, which estimates number of axes of variation unconstrained by covariance) was lower when soils were drier. In contrast, $n_D$ was lower in _B. sylvaticum_ when soils were wetter. The maximum evolvability ($e_{max}$, variance through largest eigenvector of multidimensional trait space) also showed opposite trends between the two species. Whereas in _B. distachyon_ $e_{max}$ was highest under the driest conditions, in _B. sylvaticum_ $e_{max}$ was highest under the wettest conditions. The same trend was seen in total genetic variance ($V_T$, which summarizes all genetic variance through multidimensional trait space). These results indicate that _B. distachyon_ has increased genetic variance under dry conditions as compared to wet conditions, but that natural selection may be more constrained to act on this variation due to covariance between traits. In contrast, our results suggest that  _B. sylvaticum_ has decreased genetic variance under dry conditions on which selection might act but that this variation is less constrained by covariance between traits. 
+
+# Discussion
+
+Environmental conditions vary along continuous gradients in space, time, and degree. Natural populations of organisms may therefore be exposed to a range of values for any particular dimension of the environment. The efficacy of natural selection to shape evolutionary response of populations depends on the magnitude of genetic variation in response to these environmental gradients and on the genetic correlation between traits as a function of the environment. Here, we explicitly model trait variation in two plant species as a continuous function of soil water availability and consider how genetic variance and co-variance in these functional responses may affect the evolution of plant-environment interaction.
+
+### Non-linearity in soil moisture response is pervasive in _Brachypodium_
+
+We found significant non-linearity in response to a soil moisture gradient for all measured traits in at least one of the two species sampled. The best-fit function for some traits was quadratic, while other traits showed more complex responses to the environment which were best fit by a spline function. These results offer new insights with respect to the study of plant response to soil drying. By focusing on the curvature of phenotypic response as the explicitly modeled trait, we avoid contrasts of trait values expressed at arbitrary levels of soil water content which may obscure different thresholds of response among the diverse genotypes under study. SLA in _B. distachyon_ exhibits this pattern, as two accessions show a threshold-like response in decreasing SLA as soils become drier, and three accessions express their highest SLA at intermediate SWC. Leaf N content (on a leaf-mass basis) in _B. sylvaticum_ likewise shows considerable diversity of response with two accessions expressing their lowest values at intermediate SWC, one accession expressing its highest Leaf N at intermediate SWC, and one accession showing a nearly linear response along the SWC gradient.
+
+### Implications for evolution of _Brachypodium_
+
+Leaf N and SLA are two axes of the classic Leaf Economic Spectrum [@wright2004worldwide] and so the contrasting responses of these traits between the annual _B. distachyon_ and perennial _B. sylvaticum_ may reflect broader differences in their life history strategies. We recently reviewed evidence for physiological, anatomical and developmental differences between herbaceous annual and perennial species, finding support for generally higher SLA in annuals, befitting a generally resource-acquisitive strategy [@lundgren2020lifehistory]. Garnier [@garnier1992growth] argued that small changes in leaf anatomy (e.g. SLA) will likely have large effects on plant growth rate and resource use and could therefore tip the balance between perennial and annual strategies. 
+We also found that signatures of evolutionary constraint differ along our imposed soil water content gradient. Specifically, we find evidence of highest evolvability in multitrait space (measured by $e_{max}$ and $v_T$) in _B. distachyon_ under the driest soils. In contrast, _B. sylvaticum_ exhibited evidence of greater evolvability by the same measures under the highest soil water content studied here. We speculate that the pattern observed could be a reflection of the different life history strategies of these two species. Annuality is considered a drought adaptive strategy characterized by escaping drought through phenology, by flowering before and remaining dormant as seeds during the most drought prone seasons [@friedman2015all; @monroe2019drought] Thus, because of their life history, populations of annuals may actually experience fewer episodes of strong selection from extreme drought, which could explain why we find elevated genetic variance under these environments. In contrast, perennials such as _B. sylvaticum_ are subjected to all seasons and might therefore, experience more frequent episodes of selection caused by dehydration stress, despite paradoxically being in found in environments where droughts are less frequent on an annual basis. This pattern is consistent with the predictions of cryptic genetic variation revealed under environments where selection is less frequent or severe [@schlichting2008hidden].
+
+### Implications for breeding drought adaptation
+
+We found that genetic correlations between traits can vary dramatically even over relatively small changes in soil moisture (Fig. \@ref(fig:cors)). Responses to selection for drought tolerance may therefore depend on drought severity because of these patterns in genetic correlations. In the context of breeding, exploratory studies such as this may be valuable for identifying conditions for which genetic correlations are aligned with breeding objectives. Similarly, we found that signatures of evolutionary constraint varied across the environmental gradient, suggesting that responses to selection may be improved or restricted in accordance with patterns of constraint in relation to environment. Interestingly, we also found that some species may be more responsive to selection in a given environment based on patterns of constraint.
+
+From a practical perspective this work highlights the value of function-valued trait approaches that may be extended to studying plant-water relations in agricultural settings. In this experiment, we investigated variation in plant responses to a gradient of soil moisture using six watering levels, which in combination with random variation in water capacity of experimental pots, produced a continuous gradient of soil moisture ranging from field capacity of the soil to strongly water-limited. In the field, multiple watering regimes in combination with random variability between plots may produce similar gradients of soil moisture. In this experiment, water content was measured gravimetrically. New sensing technologies may be useful for quantifying soil moisture in an analogous fashion, to define soil moisture quantitatively and then apply function-valued statistical approaches to contrast trait expression among genotypes.
+
+### Concluding remarks
+
+Describing traits and their complex relationships with environmental and genetic variation continue to be challenges for biology. This goal is worthy of further effort if we are to address the challenges posed by climate change and understand organism evolution. Fortunately, new approaches such as analyses of function-valued traits and multivariate trait covariance analyses facilitate new discoveries. We hope that this study, by demonstrating the use of these approaches to yield novel insight into the influence of environment on phenotypes, trait correlations, and evolutionary constraint, will inspire further work to tackle the challenge of studying organisms and environments.
+
+# Acknowledgements
+We thank Chase Mason and Eric Goolsby for insightful conversations about function-valued trait approaches. This work was supported by an Eco-Evo-Devo Network training grant to JGM.
+
+# Contributions
+JGM and DD funded, planned, and conducted the experiment. JGM, HC, and DD contributed to analyses and writing.
+
+\newpage
+
+
+\begingroup
+\setlength{\parindent}{-0.5in}
+\setlength{\leftskip}{0.5in}
+
+<div id = "refs"></div>
+\endgroup
+
+\newpage
+\beginsupplement
+
+# Supplement 
+
+```{r outmodels, results = 'asis', echo = F}
+
+
+pretty_table <- capture.output(apa_table(
+  out_models
+  , caption = "final models",
+  digits=5,
+  font_size="tiny",
+  longtable = F,
+  landscape=F
+)
+)
+
+pretty_table <- gsub("\\{table\\}", "\\{table\\*\\}", pretty_table)
+cat(paste(pretty_table, collapse = "\n"))
+
+```
+
+(ref:maps) Distributions of (a) _B. distachyon_ and (b) _B. sylvaticum_ reported on GBIF as of 2019.18.08. Examples of (c) _B. distachyon_  Carly Slawson (CC BY 4.0, https://www.inaturalist.org/photos/42532397) and (d) _B. sylvaticum_ Grzegorz Grzejszczak (CC BY-NC 4.0, https://www.inaturalist.org/photos/3608899).
+
+```{r maps, fig.cap='(ref:maps)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"}
+knitr::include_graphics("../Figures/maps.pdf", dpi = 108)
+```
+
+(ref:racks) Planting scheme. 
+```{r racks, fig.cap='(ref:racks)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"}
+knitr::include_graphics("../Figures/racks_IDs.png", dpi = 108)
+```
+
+(ref:leafarea) Settings used in Easy Leaf Area. 
+```{r leafarea, fig.cap='(ref:leafarea)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"}
+knitr::include_graphics("../Figures/settings_used.pdf", dpi = 108)
+```
+
+(ref:pots) Variation in pot field capacity. 
+```{r pots, fig.cap='(ref:pots)', out.width = "\\textwidth", fig.pos = "!h"}
+knitr::include_graphics("../Figures/pots.pdf", dpi = 108)
+```
+
+<!-- ```{r modelsspecies, results = 'asis', echo = F} -->
+
+<!-- pretty_table <- capture.output(apa_table( -->
+<!--   t_model_selection_summaries -->
+<!--   , caption = "Model selection. H = harvest day, S = species, G = genotype, E = final soil moisture, E^2 = quadratic parameter, ns(E)_df=2 = natural spline paramter", -->
+<!--   digits=3, -->
+<!--   font_size="scriptsize", -->
+<!--   longtable = F, -->
+<!--   landscape=F, -->
+<!--   align="c" -->
+<!-- )) -->
+
+<!-- pretty_table <- gsub("\\{table\\}", "\\{table\\*\\}", pretty_table) -->
+<!-- cat(paste(pretty_table, collapse = "\n")) -->
+
+
+<!-- ``` -->
+
+
+<!-- (ref:slapcplot) **Principle component analysis of coariance matrix of SLA for _B. distachyon_ and _B. sylvaticum_.**  -->
+<!-- ```{r slapcplot, fig.cap='(ref:slapcplot)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"} -->
+<!-- knitr::include_graphics("../Figures/SLA_PC_plot.pdf", dpi = 108) -->
+<!-- ``` -->
+
+<!-- (ref:curvesbyspecies) Traits when FVT modeled by species -->
+<!-- ```{r curvesbyspecies, fig.cap='(ref:curvesbyspecies)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"} -->
+<!-- knitr::include_graphics("../Figures/curves.pdf", dpi = 108) -->
+<!-- ``` -->
+
+<!-- (ref:corsbyspecies) Trait correlatiopns with FVT by species -->
+<!-- ```{r corsbyspecies, fig.cap='(ref:corsbyspecies)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"} -->
+<!-- knitr::include_graphics("../Figures/corsplots.pdf", dpi = 108) -->
+<!-- ``` -->
+
+<!-- (ref:constraintbyspecies) Constraint when FVT modeled by species -->
+<!-- ```{r constraintbyspecies, fig.cap='(ref:constraintbyspecies)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"} -->
+<!-- knitr::include_graphics("../Figures/constraints.pdf", dpi = 108) -->
+<!-- ``` -->
+
+<!-- (ref:covd) Covariance function for each trait of _B. distachyon_.  -->
+<!-- ```{r covd, fig.cap='(ref:covd)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"} -->
+<!-- knitr::include_graphics("../Figures/b_dist_cov.pdf", dpi = 108) -->
+<!-- ``` -->
+
+<!-- (ref:covs) Covariance function for each trait of _B. sylvaticum_.  -->
+<!-- ```{r covs, fig.cap='(ref:covs)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"} -->
+<!-- knitr::include_graphics("../Figures/b_sylv_cov.pdf", dpi = 108) -->
+<!-- ``` -->
+
+<!-- (ref:PCplot) PCA analysis for genetic covariance matrix of _B. sylvaticum_ and _B. distachyon_.  -->
+<!-- ```{r PCplot, fig.cap='(ref:PCplot)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"} -->
+<!-- knitr::include_graphics("../Figures/PCplot.pdf", dpi = 108) -->
+<!-- ``` -->
