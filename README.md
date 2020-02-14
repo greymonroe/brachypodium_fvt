@@ -1,13 +1,10 @@
 
 ## Folders
 ### Data/
-The *Data* folder contains all raw data used in the study. My philosophy for data is one inspired by the sterile technique of microbiologists. If you open a data file in a program like excel, you expose it to contamination (ie. unknowingly changing values and saving the file). It's best to obtain these data files once, for example after an experiment or downloaded from public resource and do all analyses, recalculations, sorting, etc in a program like R. You can save the output, but never change the original data.
+The *Data* folder contains raw data used in the study. 
 
 ### src/
-Contains scripts or other code that will be called from _manuscript.rmd_. Useful for long code. Also includes a _Sandbox.R_ file for development.
-
-### RData/
-Contains RData objects that are products of scripts and code. These serve as intemediates between Data and final Figures and Tables that will not end up in the final manuscript but are necessary for analyses. Primarily this is useful when generating these data objects is slow and creating them everytime the manuscript is compiled takes a long. You can load these rather than regenerate them everytime.
+Contains scripts or other code that will be called from _manuscript.rmd_. Useful for long code. 
 
 ### Figures/
 The *Figures* folder contains all figures produced by _manuscript.rmd_. I prefer to produce figures in _.pdf_ format.
