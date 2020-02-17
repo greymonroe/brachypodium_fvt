@@ -66,7 +66,7 @@ row.names(t_model_selection_summaries)<-paste0(rep(real_trait_names, each=2), " 
 t_model_selection_summaries_byspecies<-t_model_selection_summaries
 
 
-pdf("../Figures/curves_byspecies.pdf", width=3.5, height=6)
+pdf("../Figures/curves_byspecies.pdf", width=3.7, height=6.4)
 plots<-plot_grid(plotlist = curve_plots, ncol = 2,labels="auto", label_size = 8, vjust=c(1,1,rep(0.5, length(curve_plots)-2)), hjust = c(0,0.5))
 #allplots<-plot_grid(plots, pca_plots, ncol=2, rel_widths = c(2, 1))
 print(plots)

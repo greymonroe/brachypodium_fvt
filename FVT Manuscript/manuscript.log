@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  14 FEB 2020 01:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 FEB 2020 00:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1151,7 +1151,7 @@ Underfull \vbox (badness 1215) has occurred while \output is active []
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 126.
 
-<../Figures/DryDown_lines.pdf, id=117, 505.89pt x 144.54pt>
+<../Figures/DryDown_lines.pdf, id=113, 505.89pt x 144.54pt>
 File: ../Figures/DryDown_lines.pdf Graphic file (type pdf)
 <use ../Figures/DryDown_lines.pdf>
 Package pdftex.def Info: ../Figures/DryDown_lines.pdf  used on input line 136.
@@ -1166,44 +1166,55 @@ File: ts1txr.fd 2000/12/15 v3.1
 ) [2]
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
-[3 <../Figures/DryDown_lines.pdf>] [4]
+[3 <../Figures/DryDown_lines.pdf>]
+Underfull \vbox (badness 6094) has occurred while \output is active []
 
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 235.
-
-<../Figures/curves_byspecies.pdf, id=170, 252.945pt x 433.62pt>
+[4]
+<../Figures/curves_byspecies.pdf, id=160, 266.9975pt x 461.725pt>
 File: ../Figures/curves_byspecies.pdf Graphic file (type pdf)
 <use ../Figures/curves_byspecies.pdf>
-Package pdftex.def Info: ../Figures/curves_byspecies.pdf  used on input line 24
-9.
-(pdftex.def)             Requested size: 252.95595pt x 433.63878pt.
+Package pdftex.def Info: ../Figures/curves_byspecies.pdf  used on input line 23
+5.
+(pdftex.def)             Requested size: 266.99683pt x 461.72388pt.
 
-Overfull \hbox (11.2127pt too wide) in paragraph at lines 249--249
+Overfull \hbox (25.25359pt too wide) in paragraph at lines 235--235
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/pca_byspecies.pdf, id=171, 505.89pt x 252.945pt>
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 241.
+
+<../Figures/pca_byspecies.pdf, id=164, 505.89pt x 252.945pt>
 File: ../Figures/pca_byspecies.pdf Graphic file (type pdf)
 <use ../Figures/pca_byspecies.pdf>
-Package pdftex.def Info: ../Figures/pca_byspecies.pdf  used on input line 255.
+Package pdftex.def Info: ../Figures/pca_byspecies.pdf  used on input line 248.
 (pdftex.def)             Requested size: 501.56596pt x 250.78299pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5]
-<../Figures/corsplots_byspecies.pdf, id=190, 505.89pt x 505.89pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[5 <../Figures/curves_byspecies.pdf>]
+Underfull \vbox (badness 6842) has occurred while \output is active []
+
+<../Figures/corsplots_byspecies.pdf, id=191, 505.89pt x 505.89pt>
 File: ../Figures/corsplots_byspecies.pdf Graphic file (type pdf)
 <use ../Figures/corsplots_byspecies.pdf>
 Package pdftex.def Info: ../Figures/corsplots_byspecies.pdf  used on input line
- 271.
+ 261.
 (pdftex.def)             Requested size: 501.56596pt x 501.56596pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/constraints_byspecies.pdf, id=191, 216.81pt x 325.215pt>
+[6 <../Figures/pca_byspecies.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<../Figures/constraints_byspecies.pdf, id=215, 216.81pt x 325.215pt>
 File: ../Figures/constraints_byspecies.pdf Graphic file (type pdf)
 <use ../Figures/constraints_byspecies.pdf>
 Package pdftex.def Info: ../Figures/constraints_byspecies.pdf  used on input li
@@ -1212,83 +1223,78 @@ ne 277.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <../Figures/curves_byspecies.pdf>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[7 <../Figures/corsplots_byspecies.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 298.
 
+[8 <../Figures/constraints_byspecies.pdf>]
+Underfull \vbox (badness 1622) has occurred while \output is active []
 
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
-
-Underfull \vbox (badness 2245) has occurred while \output is active []
-
-[7 <../Figures/pca_byspecies.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-[8 <../Figures/corsplots_byspecies.pdf>] [9 <../Figures/constraints_byspecies.p
-df>] [10] [11]
-<../Figures/maps.pdf, id=326, 433.62pt x 289.08pt>
+[9] [10] [11] [12]
+<../Figures/maps.pdf, id=332, 433.62pt x 289.08pt>
 File: ../Figures/maps.pdf Graphic file (type pdf)
 <use ../Figures/maps.pdf>
-Package pdftex.def Info: ../Figures/maps.pdf  used on input line 610.
+Package pdftex.def Info: ../Figures/maps.pdf  used on input line 608.
 (pdftex.def)             Requested size: 433.63878pt x 289.09251pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/racks_IDs.png, id=329, 907.89188pt x 586.44093pt>
+<../Figures/racks_IDs.png, id=335, 907.89188pt x 586.44093pt>
 File: ../Figures/racks_IDs.png Graphic file (type png)
 <use ../Figures/racks_IDs.png>
-Package pdftex.def Info: ../Figures/racks_IDs.png  used on input line 616.
+Package pdftex.def Info: ../Figures/racks_IDs.png  used on input line 614.
 (pdftex.def)             Requested size: 501.55861pt x 323.97523pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/settings_used.pdf, id=331, 72.27pt x 144.54pt>
+<../Figures/settings_used.pdf, id=337, 72.27pt x 144.54pt>
 File: ../Figures/settings_used.pdf Graphic file (type pdf)
 <use ../Figures/settings_used.pdf>
-Package pdftex.def Info: ../Figures/settings_used.pdf  used on input line 622.
+Package pdftex.def Info: ../Figures/settings_used.pdf  used on input line 620.
 (pdftex.def)             Requested size: 72.2731pt x 144.54623pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/pots.pdf, id=332, 216.81pt x 86.3225pt>
+<../Figures/pots.pdf, id=338, 216.81pt x 86.3225pt>
 File: ../Figures/pots.pdf Graphic file (type pdf)
 <use ../Figures/pots.pdf>
-Package pdftex.def Info: ../Figures/pots.pdf  used on input line 628.
+Package pdftex.def Info: ../Figures/pots.pdf  used on input line 626.
 (pdftex.def)             Requested size: 216.81276pt x 86.32358pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 632.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 630.
 - LAST -
-Extra skip:11.71323pt
-Left:160.0pt/2.165pt
-Right:150.45177pt/0.0pt
-Output:160.22588pt
-[12] [13] [14 <../Figures/maps.pdf>] [15 <../Figures/racks_IDs.png> <../Figures
-/settings_used.pdf>] [16
+Extra skip:18.50175pt
+Left:18.50175pt/0.0pt
+Right:0.0pt/0.0pt
+Output:18.25087pt
+[13] [14] [15 <../Figures/maps.pdf>] [16 <../Figures/racks_IDs.png> <../Figures
+/settings_used.pdf>] [17
 
 
  <../Figures/pots.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 632.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 630.
 (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 632.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 632.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 630.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 630.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: B3B5B7EE79A9182EACDCF6290B45011F;6819.
+(rerunfilecheck)             Checksum: E576FC284C2A7CFA1D821DBC354531E7;6669.
  ) 
 Here is how much of TeX's memory you used:
- 15956 strings out of 492649
- 235801 string characters out of 6129622
- 383279 words of memory out of 5000000
- 19044 multiletter control sequences out of 15000+600000
- 94852 words of font info for 432 fonts, out of 8000000 for 9000
+ 15950 strings out of 492649
+ 235743 string characters out of 6129622
+ 374431 words of memory out of 5000000
+ 19042 multiletter control sequences out of 15000+600000
+ 94589 words of font info for 429 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,10n,45p,1855b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,10n,45p,2081b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2018/te
@@ -1299,10 +1305,10 @@ s/type1/public/txfonts/txex.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 mes/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manuscript.pdf (16 pages, 17397033 bytes).
+Output written on manuscript.pdf (17 pages, 17397861 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
+ 460 PDF objects out of 1000 (max. 8388607)
  403 compressed objects within 5 object streams
  133 named destinations out of 1000 (max. 500000)
- 43254 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 43246 words of extra memory for PDF output out of 51595 (max. 10000000)
 
