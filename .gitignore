@@ -6,3 +6,5 @@ dynamuscript_template.Rproj
 git_ignore
 Icon
 FVT Manuscript/manuscript comments.pdf
+.DS_Store
+FVT Manuscript/.DS_Store

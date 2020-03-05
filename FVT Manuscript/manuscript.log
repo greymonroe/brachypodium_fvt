@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 FEB 2020 00:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  5 MAR 2020 18:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1166,10 +1166,7 @@ File: ts1txr.fd 2000/12/15 v3.1
 ) [2]
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
-[3 <../Figures/DryDown_lines.pdf>]
-Underfull \vbox (badness 6094) has occurred while \output is active []
-
-[4]
+[3 <../Figures/DryDown_lines.pdf>] [4]
 <../Figures/curves_byspecies.pdf, id=160, 266.9975pt x 461.725pt>
 File: ../Figures/curves_byspecies.pdf Graphic file (type pdf)
 <use ../Figures/curves_byspecies.pdf>
@@ -1233,10 +1230,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 298.
 
-[8 <../Figures/constraints_byspecies.pdf>]
-Underfull \vbox (badness 1622) has occurred while \output is active []
-
-[9] [10] [11] [12]
+[8 <../Figures/constraints_byspecies.pdf>] [9] [10] [11] [12]
 <../Figures/maps.pdf, id=332, 433.62pt x 289.08pt>
 File: ../Figures/maps.pdf Graphic file (type pdf)
 <use ../Figures/maps.pdf>
@@ -1245,7 +1239,7 @@ Package pdftex.def Info: ../Figures/maps.pdf  used on input line 608.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/racks_IDs.png, id=335, 907.89188pt x 586.44093pt>
+<../Figures/racks_IDs.png, id=336, 907.89188pt x 586.44093pt>
 File: ../Figures/racks_IDs.png Graphic file (type png)
 <use ../Figures/racks_IDs.png>
 Package pdftex.def Info: ../Figures/racks_IDs.png  used on input line 614.
@@ -1253,7 +1247,7 @@ Package pdftex.def Info: ../Figures/racks_IDs.png  used on input line 614.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/settings_used.pdf, id=337, 72.27pt x 144.54pt>
+<../Figures/settings_used.pdf, id=338, 72.27pt x 144.54pt>
 File: ../Figures/settings_used.pdf Graphic file (type pdf)
 <use ../Figures/settings_used.pdf>
 Package pdftex.def Info: ../Figures/settings_used.pdf  used on input line 620.
@@ -1261,7 +1255,7 @@ Package pdftex.def Info: ../Figures/settings_used.pdf  used on input line 620.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/pots.pdf, id=338, 216.81pt x 86.3225pt>
+<../Figures/pots.pdf, id=339, 216.81pt x 86.3225pt>
 File: ../Figures/pots.pdf Graphic file (type pdf)
 <use ../Figures/pots.pdf>
 Package pdftex.def Info: ../Figures/pots.pdf  used on input line 626.
@@ -1290,7 +1284,7 @@ Package rerunfilecheck Info: File `manuscript.out' has not changed.
 Here is how much of TeX's memory you used:
  15950 strings out of 492649
  235743 string characters out of 6129622
- 374431 words of memory out of 5000000
+ 375592 words of memory out of 5000000
  19042 multiletter control sequences out of 15000+600000
  94589 words of font info for 429 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1305,10 +1299,10 @@ s/type1/public/txfonts/txex.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 mes/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manuscript.pdf (17 pages, 17397861 bytes).
+Output written on manuscript.pdf (17 pages, 17398376 bytes).
 PDF statistics:
- 460 PDF objects out of 1000 (max. 8388607)
- 403 compressed objects within 5 object streams
+ 461 PDF objects out of 1000 (max. 8388607)
+ 404 compressed objects within 5 object streams
  133 named destinations out of 1000 (max. 500000)
  43246 words of extra memory for PDF output out of 51595 (max. 10000000)
 

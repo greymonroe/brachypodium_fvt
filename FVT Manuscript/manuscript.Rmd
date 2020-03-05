@@ -4,9 +4,9 @@ shorttitle        : "Function-valued drought extremes"
 
 author: 
   - name          : "J. Grey Monroe"
-    affiliation   : "1"
+    affiliation   : "1,4"
     corresponding : yes    # Define only one corresponding author
-    address       : "262 Robbins Hall, UC Davis, One Shields Ave, Davis CA 95616"
+    address       : "Current address: 1 Max Planck Ring, 72076 Tubingen, DE"
     email         : "greymonroe@gmail.com"
   - name          : "Haoran Cai"
     affiliation   : "2"
@@ -19,6 +19,8 @@ affiliation:
     institution   : "Department of Civil and Environmental Engineering, Massachusetts Institute of Technology, Cambridge, MA, USA"
   - id            : "3"
     institution   : "The Arnold Arboretum of Harvard University. Boston, MA, USA"
+  - id            : "4"
+    institution   : "Max Planck Institute for Developmental Biology, Tubingen, DE"
 
 abstract: Water is perhaps the greatest environmental determinant of plant yield and fitness, yet our understanding of plant-water relations is limited because it is primarily informed by  experiments that have treated soil moisture variability  as two simple discrete levels - wet and dry - rather than a continually varying environmental gradient. Here we used experimental and statistical methods based on function-valued traits to study responses to continuously varying soil moisture gradient in a suite of physiological and morphological traits in two species and multiple genotypes of the model grass \textit{Brachypodium}. We find that the majority of traits exhibit non-linear responses to soil moisture variability. We also observe differences in the shape of these non-linear responses between traits, species, and genotypes. Emergent phenomena arise from this variation including changes in trait correlations and evolutionary constraints as a function of soil moisture. These results point to the importance of considering non-linearity in plant-water relations to predict plastic and evolutionary responses to changing climates.
   
@@ -221,7 +223,7 @@ We found that genetic correlations between traits can vary dramatically even ove
 From a practical perspective this work highlights the value of function-valued trait approaches that may be extended to studying plant-water relations in agricultural settings. In this experiment, we investigated variation in plant responses to a gradient of soil moisture using six watering levels, which in combination with random variation in water capacity of experimental pots, produced a continuous gradient of soil moisture ranging from field capacity of the soil to strongly water-limited. In the field, multiple watering regimes in combination with random variability between plots may produce similar gradients of soil moisture. Here, water content was measured gravimetrically. New sensing technologies may be useful for quantifying soil moisture in an analogous fashion, to define soil moisture quantitatively and then apply function-valued statistical approaches to contrast trait expression among genotypes. Finally, while in this experiment we used destructive phenotyping methods to measure traits, non-destructive (and high throughput) phenotyping will enable measurement of yield or fitness data as well, to examine explicit connections between trait variation and adaptation to different degrees of soil moisture. 
 
 # Acknowledgements
-We thank Chase Mason and Eric Goolsby for insightful conversations about function-valued trait approaches. This work was supported by an Eco-Evo-Devo Network training grant to JGM.
+We thank Chase Mason and Eric Goolsby for insightful conversations about function-valued trait approaches. This work was supported by an Eco-Evo-Devo Network training grant, USDA-NIFA Award 2014-38420-21801, and Max Planck Society support for JGM.
 
 # Contributions
 JGM and DD funded, planned, and conducted the experiment. JGM, HC, and DD contributed to analyses and writing.
@@ -259,7 +261,7 @@ cat(paste(pretty_table, collapse = "\n"))
 
 ```
 
-(ref:maps) Distributions of (a) _B. distachyon_ and (b) _B. sylvaticum_ reported on GBIF as of 2019.18.08. Examples of (c) _B. distachyon_ Carly Slawson (CC BY 4.0, https://www.inaturalist.org/photos/42532397) and (d) _B. sylvaticum_ Grzegorz Grzejszczak (CC BY-NC 4.0, https://www.inaturalist.org/photos/3608899).
+(ref:maps) Distributions of (a) _B. distachyon_ and (b) _B. sylvaticum_ reported on GBIF as of 2019.18.08. Examples of (c) _B. distachyon_ Carly Slawson (CC BY 4.0, https://www.inaturalist.org/photos/42532397) and (d) _B. sylvaticum_ Grzegorz Grzejszczak (CC BY-NC 4.0, https://www.inaturalist.org/photos/36088991) (GBIF.org (26 February 2020) GBIF Occurrence Download https://doi.org/10.15468/dl.rau5v9).
 
 ```{r maps, fig.cap='(ref:maps)', out.width = "\\textwidth", fig.pos = "!h", fig.env="figure*"}
 knitr::include_graphics("../Figures/maps.pdf", dpi = 108)
