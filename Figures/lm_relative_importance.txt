@@ -1,0 +1,147 @@
+[1] "Relative_WC"
+[1] "b_dist"
+                     ns(Day_14, df = 2) I(Day_14^2) Day_14
+Sum of weights:      1.00               0.73        0.50  
+N containing models:    4                  2           2  
+[1] "Relative_WC"
+[1] "b_sylv"
+                     ns(Day_14, df = 2) Day_14 I(Day_14^2) Geno
+Sum of weights:      0.81               0.59   0.41        0.33
+N containing models:    6                  5      4           3
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "SLA"
+[1] "b_dist"
+                     Day_14 Geno Day_14:Geno ns(Day_14, df = 2) I(Day_14^2) Geno:I(Day_14^2)
+Sum of weights:      1.00   1.00 0.78        0.52               0.48        0.22            
+N containing models:    3      3    2           1                  2           1            
+[1] "SLA"
+[1] "b_sylv"
+                     Geno ns(Day_14, df = 2) Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.63               0.50   0.37       
+N containing models:    6    4                  3      3       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "aboveground_greenarea"
+[1] "b_dist"
+                     Geno ns(Day_14, df = 2) Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.84               0.58   0.48       
+N containing models:    5    4                  3      3       
+[1] "aboveground_greenarea"
+[1] "b_sylv"
+                     Geno Day_14 ns(Day_14, df = 2) I(Day_14^2)
+Sum of weights:      1.00 0.69   0.61               0.27       
+N containing models:    4    3      2                  1       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "Shoot_Mass"
+[1] "b_dist"
+                     Geno Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.57   0.43       
+N containing models:    2    1      1       
+[1] "Shoot_Mass"
+[1] "b_sylv"
+                     Geno Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.33   0.32       
+N containing models:    3    1      1       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "Root_Mass"
+[1] "b_dist"
+                     Geno Day_14 ns(Day_14, df = 2) I(Day_14^2)
+Sum of weights:      1.00 0.71   0.57               0.40       
+N containing models:    6    4      4                  3       
+[1] "Root_Mass"
+[1] "b_sylv"
+                     Geno Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.24   0.23       
+N containing models:    3    1      1       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "Shoot_Root_Ratio"
+[1] "b_dist"
+                     Geno ns(Day_14, df = 2) Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.70               0.65   0.30       
+N containing models:    3    2                  2      1       
+[1] "Shoot_Root_Ratio"
+[1] "b_sylv"
+                     Geno I(Day_14^2) Geno:I(Day_14^2) Day_14 Day_14:Geno
+Sum of weights:      1.00 0.83        0.66             0.61   0.34       
+N containing models:    4    3           2                3      2       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "biomass"
+[1] "b_dist"
+                     Geno Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.76   0.46       
+N containing models:    3    2      2       
+[1] "biomass"
+[1] "b_sylv"
+                     Geno Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.29   0.28       
+N containing models:    3    1      1       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "c_content"
+[1] "b_dist"
+                     Day_14 I(Day_14^2) ns(Day_14, df = 2)
+Sum of weights:      0.60   0.39        0.28              
+N containing models:    3      2           2              
+[1] "c_content"
+[1] "b_sylv"
+                     Geno Day_14 ns(Day_14, df = 2) I(Day_14^2)
+Sum of weights:      1.00 0.48   0.46               0.25       
+N containing models:    4    2      2                  1       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "d13c"
+[1] "b_dist"
+                     Geno I(Day_14^2) Day_14 ns(Day_14, df = 2)
+Sum of weights:      1.00 0.74        0.44   0.36              
+N containing models:    4    3           2      2              
+[1] "d13c"
+[1] "b_sylv"
+                     Geno ns(Day_14, df = 2) Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.77               0.61   0.45       
+N containing models:    5    4                  3      3       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "n_content"
+[1] "b_dist"
+                     Geno Day_14 I(Day_14^2) ns(Day_14, df = 2)
+Sum of weights:      1.00 0.44   0.37        0.24              
+N containing models:    6    3      2           2              
+[1] "n_content"
+[1] "b_sylv"
+                     Geno Day_14 ns(Day_14, df = 2) Day_14:Geno I(Day_14^2) Geno:I(Day_14^2)
+Sum of weights:      1.00 0.85   0.56               0.56        0.55        0.55            
+N containing models:    6    5      4                  3           3           3            
+                     Geno:ns(Day_14, df = 2)
+Sum of weights:      0.45                   
+N containing models:    3                   
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "d15n"
+[1] "b_dist"
+                     Geno ns(Day_14, df = 2) Day_14 I(Day_14^2)
+Sum of weights:      1.00 0.75               0.63   0.46       
+N containing models:    6    4                  4      3       
+[1] "d15n"
+[1] "b_sylv"
+                     I(Day_14^2) ns(Day_14, df = 2) Day_14
+Sum of weights:      0.70        0.53               0.50  
+N containing models:    4           4                  4  
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+[1] "c_n"
+[1] "b_dist"
+                     Geno I(Day_14^2) Day_14
+Sum of weights:      1.00 0.59        0.41  
+N containing models:    2    1           1  
+[1] "c_n"
+[1] "b_sylv"
+                     Geno I(Day_14^2) Day_14 Geno:I(Day_14^2) Day_14:Geno
+Sum of weights:      1.00 0.58        0.42   0.35             0.21       
+N containing models:    4    2           2      1                1       
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)
+`summarise()` regrouping output by 'Geno', 'Sp' (override with `.groups` argument)

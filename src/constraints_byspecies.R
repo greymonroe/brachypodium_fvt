@@ -5,6 +5,13 @@ traitnames<-real_trait_names[-which(real_trait_names=="RWC")]
 
 subdata<-alldata[,-grep("Relative_WC", colnames(alldata))]
 
+
+traitlist<-traits
+traitnames<-real_trait_names
+
+subdata<-alldata
+
+
 emaxs.bdist<-c()
 vts.bdist<-c()
 nds.bdist<-c()

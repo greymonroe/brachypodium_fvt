@@ -10,18 +10,20 @@ plot_fvt<-function(data, trait, real_trait_name, xaxis, saveplot=NULL, species=F
   for (sp in c("b_dist","b_sylv")){
 
     datasp<-subset(data, Sp == sp)
+    datasp$randomeffect<-as.factor(1)
     mod<-lm(datasp[,trait]~Geno+Day_14+I(Day_14^2)+ns(Day_14, df=2)+Day_14*Geno+I(Day_14^2)*Geno+ns(Day_14, df=2)*Geno+Harv+Day_14, data=datasp)
-    
-    
-    model_sel<-stepAIC(mod, direction = "both")
+   
+    model_sel<-stepAIC(mod, direction = "both", trace=T)
     mods[[sp]]<-model_sel
     newdata = data.frame(Sp=rep(sp, each=500), Geno=rep(unique(datasp$Geno), each=100), Harv=rep(paste0('harvest', rep(1:5, each=20)), times=5), Day_14=rep(rep(seq(0.3, 1, length.out = 20), times=5), times=5))
     newdata<-subset(newdata, Sp %in% datasp$Sp)
     
-    pred<-predict(model_sel, newdata = newdata)
+    pred<-predict(model_sel, newdata = newdata, interval = "confidence")
+    pred<-data.frame(pred)
     pred<-cbind(pred, newdata)
+    #means<-pred %>% group_by(Geno, Sp, Day_14) %>% summarise(mean=mean(pred, na.rm=T))
     
-    means<-pred %>% group_by(Geno, Sp, Day_14) %>% summarise(mean=mean(pred, na.rm=T))
+    means<-pred %>% group_by(Geno, Sp, Day_14) %>% summarise(mean=mean(fit, na.rm=T), lwr=mean(lwr, na.rm=T), upr=mean(upr, na.rm=T))
     means<-data.frame(means)
     allmeans<-rbind(allmeans, means)
     
@@ -52,6 +54,8 @@ plot_fvt<-function(data, trait, real_trait_name, xaxis, saveplot=NULL, species=F
       #geom_point(data=data, aes_string(y=trait), alpha=0.2, fill="gray", size=0.3, shape=16)+
       geom_point(alpha=0.9, fill="gray", size=.5, shape=16)+
       geom_line(lwd=.4, alpha=0.8)+
+      #geom_line(aes(y=upr), linetype="dashed", alpha=0.2)+
+     # geom_line(aes(y=lwr), linetype="dashed", alpha=0.2)+
       geom_text_repel(data=filter(means, Day_14 == max(means$Day_14)[1]), aes(label=Geno), nudge_x      = 0.1*100,
                       direction    = "y",
                       hjust        = 0,
@@ -72,7 +76,7 @@ plot_fvt<-function(data, trait, real_trait_name, xaxis, saveplot=NULL, species=F
       xlim(c(.1,1.2)*100)+
       labs(y=ylabel, x=expression('Soil moisture (%'[final]*')'))
   
-  
+  p
   if(xaxis=="Trt"){
     if(length(unique(data$Trt))<3){
       
@@ -107,6 +111,7 @@ plot_fvt<-function(data, trait, real_trait_name, xaxis, saveplot=NULL, species=F
       labs(y=trait, x="Soil moisture (%)")+
       xlim(c(-2,22))
     
+
   }
   
   if (!is.null(saveplot)){
@@ -115,6 +120,8 @@ plot_fvt<-function(data, trait, real_trait_name, xaxis, saveplot=NULL, species=F
     dev.off()
     
   }
+  means$lwr<-NULL
+  means$upr<-NULL
   return(list(aov=sums, means=means, model=mods, plot=p))
   
 }
