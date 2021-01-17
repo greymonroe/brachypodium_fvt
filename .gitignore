@@ -1,3 +1,5 @@
+src/averaging.r
+Data/all_means_averaging_model.rdata
 .Rproj.user
 .Rhistory
 .RData
