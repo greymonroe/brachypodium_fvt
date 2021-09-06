@@ -20,7 +20,6 @@ alldata<-data.frame(Geno=sort(unique(datasheet$Geno)), Sp=c("b_dist","b_sylv")[c
 allmeans<-data.frame(Geno=rep(alldata$Geno, each=20),Sp=rep(alldata$Sp, each=20), Day_14=rep(seq(0.3, 1, length.out = 20), times=10))
 curve_plots<-list()
 out_models<-data.frame()
-r2<-data.frame()
 
 for(i in 1:length(traits)){
   
@@ -28,8 +27,6 @@ for(i in 1:length(traits)){
   real_trait_name<-real_trait_names[i]
   out<-plot_fvt(data=datasheet, trait=trait, real_trait_name=real_trait_name, xaxis="Day_14")
   all_variables<-unlist(lapply(strsplit(gsub(" ","",as.character(model_selection_summaries$variables)), ":"), function(x) paste(sort(x), collapse = "")))
-  r2<-rbind(r2, data.frame(trait, sp="b_dist", r2=summary(out$model$b_dist)$r.squared, AIC=AIC(out$model$b_dist)))
-  r2<-rbind(r2, data.frame(trait, sp="b_sylv", r2=summary(out$model$b_sylv)$r.squared, AIC=AIC(out$model$b_sylv)))
   
   for (sp in c("b_dist","b_sylv")){
   model_variables<-unlist(lapply(strsplit(gsub(" ","",rownames(out$aov[[sp]])), ":"), function(x) paste(sort(x), collapse = "")))
@@ -41,11 +38,11 @@ for(i in 1:length(traits)){
   out_models<-rbind(out_models, out$aov[[sp]])
   
   model_selection_summaries[,paste0(trait, sp)]<-
-    ifelse(all_variables %in% model_variables, "x", "")
+    ifelse(all_variables %in% model_variables, "-", "")
   
-  model_selection_summaries[all_variables %in% model_variables[p_vals<0.05],paste0(trait, sp)]<-"x"
-  model_selection_summaries[all_variables %in% model_variables[p_vals<0.001],paste0(trait, sp)]<-"x"
-  model_selection_summaries[all_variables %in% model_variables[p_vals<0.00001],paste0(trait, sp)]<-"x"
+  model_selection_summaries[all_variables %in% model_variables[p_vals<0.05],paste0(trait, sp)]<-"*"
+  model_selection_summaries[all_variables %in% model_variables[p_vals<0.001],paste0(trait, sp)]<-"**"
+  model_selection_summaries[all_variables %in% model_variables[p_vals<0.00001],paste0(trait, sp)]<-"***"
   
   #model_selection_summaries[,paste0(trait, sp)]<-paste(model_selection_summaries[,paste0(trait, sp)], ifelse(all_variables %in% sig_variables, "", ""))
   }
@@ -62,7 +59,7 @@ for(i in 1:length(traits)){
 alldata<-alldata[order(alldata$Sp),]
 
 t_model_selection_summaries<-t(model_selection_summaries)
-colnames(t_model_selection_summaries)<-c("G","E","E^2","s(E)","H","G*E","G*E^2","G*s(E)","res")
+colnames(t_model_selection_summaries)<-c("G","E","E^2","ns(E)","H","G*E","G*E^2","G*ns(E)","res")
 t_model_selection_summaries<-t_model_selection_summaries[-1,]
 t_model_selection_summaries<-t_model_selection_summaries[,-ncol(t_model_selection_summaries)]
 row.names(t_model_selection_summaries)<-paste0(rep(real_trait_names, each=2), " - ", rep(c("B. distachyon", "B. sylvaticum"), times=length(real_trait_names)), "")
@@ -129,6 +126,7 @@ pca_plot2_legend<-ggplot(pca_df, aes(x=PCA3, y=PCA4, group=Geno, col=Sp))+
   guides(col=F)+
   theme(legend.position = "top", legend.key.size = unit(.1, 'points'))
 
+
 pca2_vectors<-ggplot(vectors_df, aes(x=PCA3, y=PCA4))+
   geom_point(col="gray90", size=0.25)+
   geom_segment(data=vectors_df, col="gray90", xend=0, yend=0, aes( x=PCA3, y=PCA4), size=.25)+
@@ -174,18 +172,11 @@ plasticityplot<-ggplot(multitraitplasticity, aes(x=Trt, y=plasticity, group=gp, 
   labs(y=expression('Total plasticity ('*Delta*' across all traits)'), x=expression('Soil moisture (%'[final]*')'))+
   annotate(geom = "text", x=ttestdf$Trt, y=1.1, label=ttestdf$sig)
 
-pdf("../Figures/multi_plast.pdf", width=3, height=3)
+pdf("../Figures/pca_byspecies.pdf", width=7, height=3.5)
 pca_plots<-plot_grid(pca_plot, pca_plot2,  pca1_vectors, pca2_vectors, nrow=2, labels=c("b","c","",""),label_size = 8, rel_heights=c(1,1,1,1))
 pcaplot2<-plot_grid(cowplot::get_legend(pca_plot2_legend), pca_plots, ncol=1, rel_heights=c(0.2, 2))
 allplots<-plot_grid(plasticityplot, pcaplot2, ncol=2, labels=c("a", ""), rel_widths = c(2, 2),label_size = 8)
-print(plasticityplot)
-dev.off()
-
-pdf("../Figures/pca_byspecies.pdf", width=3.5, height=3.5)
-pca_plots<-plot_grid(pca_plot, pca_plot2,  pca1_vectors, pca2_vectors, nrow=2, labels=c("a","b","",""),label_size = 8, rel_heights=c(1,1,1,1))
-pcaplot2<-plot_grid(cowplot::get_legend(pca_plot2_legend), pca_plots, ncol=1, rel_heights=c(0.2, 2))
-allplots<-plot_grid(plasticityplot, pcaplot2, ncol=2, labels=c("a", ""), rel_widths = c(2, 2),label_size = 8)
-print(pca_plots)
+print(allplots)
 dev.off()
 
 

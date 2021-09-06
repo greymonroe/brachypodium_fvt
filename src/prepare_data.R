@@ -6,7 +6,6 @@ datasheet[datasheet=="#VALUE!"]<-NA
 datasheet$Shoot_Root_Ratio<-as.numeric(datasheet$Shoot_Root_Ratio)
 datasheet$Day_14<-as.numeric(datasheet$Day_14)
 datasheet$Relative_WC<-as.numeric(datasheet$Relative_WC)
-datasheet$Relative_WC[which(datasheet$Relative_WC>100)]<-100
 datasheet$Shoot_Mass<-as.numeric(datasheet$Shoot_Mass)
 datasheet$Root_Mass<-as.numeric(datasheet$Root_Mass)
 datasheet$aboveground_greenarea<-as.numeric(datasheet$aboveground_greenarea)
@@ -27,10 +26,8 @@ datasheet$c_content<-(c_isotope$C.Amount..ug./c_isotope$Amount..mg.)[match(datas
 datasheet$n_content<-(c_isotope$N.Amount..ug./c_isotope$Amount..mg.)[match(datasheet$ID, c_isotope$Sample.ID)]
 datasheet$c_n<-(c_isotope$C.Amount..ug./c_isotope$N.Amount..ug.)[match(datasheet$ID, c_isotope$Sample.ID)]
 datasheet$d15n<-(c_isotope$d15N)[match(datasheet$ID, c_isotope$Sample.ID)]
-#datasheet$water_change_13_to_14<-datasheet$Day_14*datasheet$Max_water-as.numeric(datasheet$Day_13)*datasheet$Max_water
-#datasheet$water_used<-(datasheet$Trt-datasheet$water_change_13_to_14)/datasheet$Shoot_Mass
-#datasheet$SLA_2<-datasheet$aboveground_greenarea/datasheet$Shoot_Mass
-
-write.table(datasheet,"../Data/Monroe_et_al_2021_FVT_supplemental_data.txt",row.names = F,quote = F,sep="\t")
+datasheet$water_change_13_to_14<-datasheet$Day_14*datasheet$Max_water-as.numeric(datasheet$Day_13)*datasheet$Max_water
+datasheet$water_used<-(datasheet$Trt-datasheet$water_change_13_to_14)/datasheet$Shoot_Mass
+datasheet$SLA_2<-datasheet$aboveground_greenarea/datasheet$Shoot_Mass
 
 

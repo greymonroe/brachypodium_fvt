@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  17 JAN 2021 15:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  5 MAR 2020 18:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -590,7 +590,10 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks24
 \inpenc@posthook=\toks25
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -744,10 +747,7 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
-tim
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
 \MT@toks=\toks26
 \MT@count=\count112
@@ -765,9 +765,7 @@ LaTeX Info: Redefining \lslig on input line 913.
 Package microtype Info: Loading configuration file microtype.cfg.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
-)) (/usr/local/texlive/2018/texmf-dist/tex/latex/parskip/parskip.sty
-Package: parskip 2001/04/09 non-zero parskip adjustments
-) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 (/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
 Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
@@ -825,12 +823,6 @@ Now handling font encoding PD1 ...
 (/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4383.
-(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2018/02/06 v6.86b Hyperref: PDF Unicode definition (HO)
-Now handling font encoding PU ...
-... no UTF-8 mapping file for font encoding PU
-)
 Package hyperref Info: Hyper figures OFF on input line 4509.
 Package hyperref Info: Link nesting OFF on input line 4514.
 Package hyperref Info: Hyper index ON on input line 4517.
@@ -873,13 +865,21 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip67
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 36.
+Package hyperref Info: Option `unicode' set `true' on input line 30.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/02/06 v6.86b Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 30.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grffile.sty
 Package: grffile 2017/06/30 v1.18 Extended file name support for graphics (HO)
 Package grffile Info: Option `multidot' is set to `true'.
 Package grffile Info: Option `extendedchars' is set to `false'.
 Package grffile Info: Option `space' is set to `true'.
 Package grffile Info: \Gin@ii of package `graphicx' fixed on input line 494.
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2018/02/11 v5.2c context-sensitive quotations (JAW)
 \csq@reset=\count124
@@ -1139,11 +1139,6 @@ File: utxsyc.fd 2000/12/15 v3.1
 ) (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Try loading font information for TS1+txr on input line 106.
-
-(/usr/local/texlive/2018/texmf-dist/tex/latex/txfonts/ts1txr.fd
-File: ts1txr.fd 2000/12/15 v3.1
-)
 Underfull \vbox (badness 4505) has occurred while \output is active []
 
 [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -1156,7 +1151,7 @@ Underfull \vbox (badness 1215) has occurred while \output is active []
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 126.
 
-<../Figures/DryDown_lines.pdf, id=117, 505.89pt x 144.54pt>
+<../Figures/DryDown_lines.pdf, id=113, 505.89pt x 144.54pt>
 File: ../Figures/DryDown_lines.pdf Graphic file (type pdf)
 <use ../Figures/DryDown_lines.pdf>
 Package pdftex.def Info: ../Figures/DryDown_lines.pdf  used on input line 136.
@@ -1164,18 +1159,22 @@ Package pdftex.def Info: ../Figures/DryDown_lines.pdf  used on input line 136.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2]
+LaTeX Font Info:    Try loading font information for TS1+txr on input line 139.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/txfonts/ts1txr.fd
+File: ts1txr.fd 2000/12/15 v3.1
+) [2]
 Underfull \vbox (badness 1838) has occurred while \output is active []
 
 [3 <../Figures/DryDown_lines.pdf>] [4]
-<../Figures/curves_byspecies.pdf, id=165, 266.9975pt x 461.725pt>
+<../Figures/curves_byspecies.pdf, id=160, 266.9975pt x 461.725pt>
 File: ../Figures/curves_byspecies.pdf Graphic file (type pdf)
 <use ../Figures/curves_byspecies.pdf>
-Package pdftex.def Info: ../Figures/curves_byspecies.pdf  used on input line 24
-0.
+Package pdftex.def Info: ../Figures/curves_byspecies.pdf  used on input line 23
+5.
 (pdftex.def)             Requested size: 266.99683pt x 461.72388pt.
 
-Overfull \hbox (25.25359pt too wide) in paragraph at lines 240--240
+Overfull \hbox (25.25359pt too wide) in paragraph at lines 235--235
 [][] 
  []
 
@@ -1184,518 +1183,112 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 249.
+(hyperref)                than one, level fixed on input line 241.
+
+<../Figures/pca_byspecies.pdf, id=164, 505.89pt x 252.945pt>
+File: ../Figures/pca_byspecies.pdf Graphic file (type pdf)
+<use ../Figures/pca_byspecies.pdf>
+Package pdftex.def Info: ../Figures/pca_byspecies.pdf  used on input line 248.
+(pdftex.def)             Requested size: 501.56596pt x 250.78299pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [5 <../Figures/curves_byspecies.pdf>]
-<../Figures/multi_plast.pdf, id=190, 216.81pt x 216.81pt>
-File: ../Figures/multi_plast.pdf Graphic file (type pdf)
-<use ../Figures/multi_plast.pdf>
-Package pdftex.def Info: ../Figures/multi_plast.pdf  used on input line 256.
-(pdftex.def)             Requested size: 216.81938pt x 216.81938pt.
-<../Figures/corsplots_byspecies.pdf, id=198, 505.89pt x 505.89pt>
+Underfull \vbox (badness 6842) has occurred while \output is active []
+
+<../Figures/corsplots_byspecies.pdf, id=191, 505.89pt x 505.89pt>
 File: ../Figures/corsplots_byspecies.pdf Graphic file (type pdf)
 <use ../Figures/corsplots_byspecies.pdf>
 Package pdftex.def Info: ../Figures/corsplots_byspecies.pdf  used on input line
- 269.
+ 261.
 (pdftex.def)             Requested size: 501.56596pt x 501.56596pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/constraints_byspecies.pdf, id=204, 216.81pt x 325.215pt>
+[6 <../Figures/pca_byspecies.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<../Figures/constraints_byspecies.pdf, id=215, 216.81pt x 325.215pt>
 File: ../Figures/constraints_byspecies.pdf Graphic file (type pdf)
 <use ../Figures/constraints_byspecies.pdf>
 Package pdftex.def Info: ../Figures/constraints_byspecies.pdf  used on input li
-ne 285.
+ne 277.
 (pdftex.def)             Requested size: 216.826pt x 325.23901pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[6 <../Figures/multi_plast.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [7 <../Figures/corsplots_byspecies.pdf>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 304.
+(hyperref)                than one, level fixed on input line 298.
 
-[8 <../Figures/constraints_byspecies.pdf>] [9] [10] [11] [12]pdfTeX warning (ex
-t4): destination with the same identifier (name{ref-bernardo2020breeding}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.550 ...e\hypertarget{ref-bernardo2020breeding}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-blows2007tale}) has been already used
-, duplicate ignored
-<to be read again> 
-                   \relax 
-l.553 \leavevmode\hypertarget{ref-blows2007tale}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-bolstad2010direct}) has been already 
-used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.556 ...mode\hypertarget{ref-bolstad2010direct}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-brkljacic2011brachypodium}) has been 
-already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.559 ...ertarget{ref-brkljacic2011brachypodium}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-brommer2008exploring}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.562 ...e\hypertarget{ref-brommer2008exploring}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-casper2001drought}) has been already 
-used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.565 ...mode\hypertarget{ref-casper2001drought}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-catalan2016phylogeny}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.568 ...e\hypertarget{ref-catalan2016phylogeny}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-des2012physiological}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.571 ...e\hypertarget{ref-des2012physiological}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-des2017interactive}) has been already
- used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.574 ...ode\hypertarget{ref-des2017interactive}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-dittberner2018natural}) has been alre
-ady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.577 ...\hypertarget{ref-dittberner2018natural}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-donovan2014ecological}) has been alre
-ady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.580 ...\hypertarget{ref-donovan2014ecological}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-easlon2014easy}) has been already use
-d, duplicate ignored
-<to be read again> 
-                   \relax 
-l.583 ...vevmode\hypertarget{ref-easlon2014easy}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-edwards2012quantitative}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.586 ...ypertarget{ref-edwards2012quantitative}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-el2014genotype}) has been already use
-d, duplicate ignored
-<to be read again> 
-                   \relax 
-l.589 ...vevmode\hypertarget{ref-el2014genotype}{}
-                                                  % [13]pdfTeX warning (ext4): 
-destination with the same identifier (name{ref-felton2017integrating}) has been
- already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.592 ...\hypertarget{ref-felton2017integrating}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-friedman2015all}) has been already us
-ed, duplicate ignored
-<to be read again> 
-                   \relax 
-l.595 ...evmode\hypertarget{ref-friedman2015all}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-friedman2020evolution}) has been alre
-ady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.598 ...\hypertarget{ref-friedman2020evolution}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-garnier1992growth}) has been already 
-used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.601 ...mode\hypertarget{ref-garnier1992growth}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-gibert1998describing}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.604 ...e\hypertarget{ref-gibert1998describing}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-gibson2004uncovering}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.607 ...e\hypertarget{ref-gibson2004uncovering}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-gienapp2014evolutionary}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.610 ...ypertarget{ref-gienapp2014evolutionary}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-gomulkiewicz2018variation}) has been 
-already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.613 ...ertarget{ref-gomulkiewicz2018variation}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-goolsby2015phylogenetic}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.616 ...ypertarget{ref-goolsby2015phylogenetic}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-greenham2017temporal}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.619 ...e\hypertarget{ref-greenham2017temporal}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-griswold2008hypothesis}) has been alr
-eady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.622 ...hypertarget{ref-griswold2008hypothesis}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-houle1992comparing}) has been already
- used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.625 ...ode\hypertarget{ref-houle1992comparing}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-juenger2013natural}) has been already
- used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.628 ...ode\hypertarget{ref-juenger2013natural}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-kesari2012intron}) has been already u
-sed, duplicate ignored
-<to be read again> 
-                   \relax 
-l.631 ...vmode\hypertarget{ref-kesari2012intron}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-kingsolver2001variation}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.634 ...ypertarget{ref-kingsolver2001variation}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-kingsolver2003environmental}) has bee
-n already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.637 ...target{ref-kingsolver2003environmental}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-kingsolver2015genetic}) has been alre
-ady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.640 ...\hypertarget{ref-kingsolver2015genetic}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-kirkpatrick1989quantitative}) has bee
-n already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.643 ...target{ref-kirkpatrick1989quantitative}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-kirkpatrick2009patterns}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.646 ...ypertarget{ref-kirkpatrick2009patterns}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-lande1983measurement}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.649 ...e\hypertarget{ref-lande1983measurement}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-lenk2019transcriptional}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.652 ...ypertarget{ref-lenk2019transcriptional}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-levins1968evolution}) has been alread
-y used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.655 ...de\hypertarget{ref-levins1968evolution}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-lundgren2020lifehistory}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.658 ...ypertarget{ref-lundgren2020lifehistory}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-luo2016specific}) has been already us
-ed, duplicate ignored
-<to be read again> 
-                   \relax 
-l.661 ...evmode\hypertarget{ref-luo2016specific}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-mason2020learning}) has been already 
-used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.664 ...mode\hypertarget{ref-mason2020learning}{}
-                                                  % [14]pdfTeX warning (ext4): 
-destination with the same identifier (name{ref-mcguigan2009condition}) has been
- already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.667 ...\hypertarget{ref-mcguigan2009condition}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-mcguigan2010quantitative}) has been a
-lready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.670 ...pertarget{ref-mcguigan2010quantitative}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-meyer2005randomregression}) has been 
-already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.673 ...ertarget{ref-meyer2005randomregression}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-monroe2018ecoevolutionary}) has been 
-already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.676 ...ertarget{ref-monroe2018ecoevolutionary}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-monroe2019drought}) has been already 
-used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.679 ...mode\hypertarget{ref-monroe2019drought}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-nussey2007evolutionary}) has been alr
-eady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.682 ...hypertarget{ref-nussey2007evolutionary}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-paaby2014cryptic}) has been already u
-sed, duplicate ignored
-<to be read again> 
-                   \relax 
-l.685 ...vmode\hypertarget{ref-paaby2014cryptic}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-passioura1996drought}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.688 ...e\hypertarget{ref-passioura1996drought}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-pearse2019life}) has been already use
-d, duplicate ignored
-<to be read again> 
-                   \relax 
-l.691 ...vevmode\hypertarget{ref-pearse2019life}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-pettay2008age}) has been already used
-, duplicate ignored
-<to be read again> 
-                   \relax 
-l.694 \leavevmode\hypertarget{ref-pettay2008age}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-robinson2009impact}) has been already
- used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.697 ...ode\hypertarget{ref-robinson2009impact}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-rocha2012connecting}) has been alread
-y used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.700 ...de\hypertarget{ref-rocha2012connecting}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-schlichting2008hidden}) has been alre
-ady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.703 ...\hypertarget{ref-schlichting2008hidden}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-skirycz2011pause}) has been already u
-sed, duplicate ignored
-<to be read again> 
-                   \relax 
-l.706 ...vmode\hypertarget{ref-skirycz2011pause}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-steinwand2013sylvaticum}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.709 ...ypertarget{ref-steinwand2013sylvaticum}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-stinchcombe2010across}) has been alre
-ady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.712 ...\hypertarget{ref-stinchcombe2010across}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-stinchcombe2012genetics}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.715 ...ypertarget{ref-stinchcombe2012genetics}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-van1995linear}) has been already used
-, duplicate ignored
-<to be read again> 
-                   \relax 
-l.718 \leavevmode\hypertarget{ref-van1995linear}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-vasseur2014multivariate}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.721 ...ypertarget{ref-vasseur2014multivariate}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-MASS}) has been already used, duplica
-te ignored
-<to be read again> 
-                   \relax 
-l.724 \leavevmode\hypertarget{ref-MASS}{}
-                                         %pdfTeX warning (ext4): destination wi
-th the same identifier (name{ref-verelst2013molecular}) has been already used, 
-duplicate ignored
-<to be read again> 
-                   \relax 
-l.727 ...e\hypertarget{ref-verelst2013molecular}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-verslues2011drought}) has been alread
-y used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.730 ...de\hypertarget{ref-verslues2011drought}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-via1985genotype}) has been already us
-ed, duplicate ignored
-<to be read again> 
-                   \relax 
-l.733 ...evmode\hypertarget{ref-via1985genotype}{}
-                                                  % [15]pdfTeX warning (ext4): 
-destination with the same identifier (name{ref-visser2008keeping}) has been alr
-eady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.736 ...mode\hypertarget{ref-visser2008keeping}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-vogel2009development}) has been alrea
-dy used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.739 ...e\hypertarget{ref-vogel2009development}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-walker2019plastic}) has been already 
-used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.742 ...mode\hypertarget{ref-walker2019plastic}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-wood2015environmental}) has been alre
-ady used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.745 ...\hypertarget{ref-wood2015environmental}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-wright2004worldwide}) has been alread
-y used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.748 ...de\hypertarget{ref-wright2004worldwide}{}
-                                                  %pdfTeX warning (ext4): desti
-nation with the same identifier (name{ref-yarkhunova2016selection}) has been al
-ready used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.751 ...ypertarget{ref-yarkhunova2016selection}{}
-                                                  %
-<../Figures/maps.pdf, id=379, 433.62pt x 289.08pt>
+[8 <../Figures/constraints_byspecies.pdf>] [9] [10] [11] [12]
+<../Figures/maps.pdf, id=332, 433.62pt x 289.08pt>
 File: ../Figures/maps.pdf Graphic file (type pdf)
 <use ../Figures/maps.pdf>
-Package pdftex.def Info: ../Figures/maps.pdf  used on input line 917.
+Package pdftex.def Info: ../Figures/maps.pdf  used on input line 608.
 (pdftex.def)             Requested size: 433.63878pt x 289.09251pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/design.png, id=383, 1172.38pt x 257.96375pt>
-File: ../Figures/design.png Graphic file (type png)
-<use ../Figures/design.png>
-Package pdftex.def Info: ../Figures/design.png  used on input line 923.
-(pdftex.def)             Requested size: 501.53755pt x 110.35542pt.
+<../Figures/racks_IDs.png, id=336, 907.89188pt x 586.44093pt>
+File: ../Figures/racks_IDs.png Graphic file (type png)
+<use ../Figures/racks_IDs.png>
+Package pdftex.def Info: ../Figures/racks_IDs.png  used on input line 614.
+(pdftex.def)             Requested size: 501.55861pt x 323.97523pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/settings_used.pdf, id=385, 72.27pt x 144.54pt>
+<../Figures/settings_used.pdf, id=338, 72.27pt x 144.54pt>
 File: ../Figures/settings_used.pdf Graphic file (type pdf)
 <use ../Figures/settings_used.pdf>
-Package pdftex.def Info: ../Figures/settings_used.pdf  used on input line 929.
+Package pdftex.def Info: ../Figures/settings_used.pdf  used on input line 620.
 (pdftex.def)             Requested size: 72.2731pt x 144.54623pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/pots.pdf, id=386, 216.81pt x 86.3225pt>
+<../Figures/pots.pdf, id=339, 216.81pt x 86.3225pt>
 File: ../Figures/pots.pdf Graphic file (type pdf)
 <use ../Figures/pots.pdf>
-Package pdftex.def Info: ../Figures/pots.pdf  used on input line 935.
+Package pdftex.def Info: ../Figures/pots.pdf  used on input line 626.
 (pdftex.def)             Requested size: 216.81276pt x 86.32358pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<../Figures/pca_byspecies.pdf, id=387, 252.945pt x 252.945pt>
-File: ../Figures/pca_byspecies.pdf Graphic file (type pdf)
-<use ../Figures/pca_byspecies.pdf>
-Package pdftex.def Info: ../Figures/pca_byspecies.pdf  used on input line 941.
-(pdftex.def)             Requested size: 252.94823pt x 252.94823pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 944.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 630.
 - LAST -
-Extra skip:17.71323pt
-Left:196.0pt/2.165pt
-Right:180.45177pt/0.0pt
-Output:196.22588pt
-[16] [17] [18 <../Figures/maps.pdf>] [19 <../Figures/design.png> <../Figures/se
-ttings_used.pdf>] [20
+Extra skip:18.50175pt
+Left:18.50175pt/0.0pt
+Right:0.0pt/0.0pt
+Output:18.25087pt
+[13] [14] [15 <../Figures/maps.pdf>] [16 <../Figures/racks_IDs.png> <../Figures
+/settings_used.pdf>] [17
 
 
- <../Figures/pots.pdf>] [21 <../Figures/pca_byspecies.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 944.
+ <../Figures/pots.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 630.
 (./manuscript.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 944.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 944.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 630.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 630.
 Package rerunfilecheck Info: File `manuscript.out' has not changed.
-(rerunfilecheck)             Checksum: 06CD997C527995B4960DD784F421DA59;7014.
+(rerunfilecheck)             Checksum: E576FC284C2A7CFA1D821DBC354531E7;6669.
  ) 
 Here is how much of TeX's memory you used:
- 16031 strings out of 492649
- 236831 string characters out of 6129622
- 393615 words of memory out of 5000000
- 19050 multiletter control sequences out of 15000+600000
- 97373 words of font info for 465 fonts, out of 8000000 for 9000
+ 15950 strings out of 492649
+ 235743 string characters out of 6129622
+ 375592 words of memory out of 5000000
+ 19042 multiletter control sequences out of 15000+600000
+ 94589 words of font info for 429 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 43i,10n,45p,2137b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,10n,45p,2081b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2018/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/
 2018/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2018/te
@@ -1706,10 +1299,10 @@ s/type1/public/txfonts/txex.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1
 mes/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmbi8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on manuscript.pdf (21 pages, 17330697 bytes).
+Output written on manuscript.pdf (17 pages, 17398376 bytes).
 PDF statistics:
- 526 PDF objects out of 1000 (max. 8388607)
- 463 compressed objects within 5 object streams
- 158 named destinations out of 1000 (max. 500000)
- 43259 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 461 PDF objects out of 1000 (max. 8388607)
+ 404 compressed objects within 5 object streams
+ 133 named destinations out of 1000 (max. 500000)
+ 43246 words of extra memory for PDF output out of 51595 (max. 10000000)
 

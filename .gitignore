@@ -1,5 +1,3 @@
-src/averaging.r
-Data/all_means_averaging_model.rdata
 .Rproj.user
 .Rhistory
 .RData
@@ -10,4 +8,3 @@ Icon
 FVT Manuscript/manuscript comments.pdf
 .DS_Store
 FVT Manuscript/.DS_Store
-Friendly Review
